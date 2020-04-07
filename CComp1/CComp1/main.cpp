@@ -7,6 +7,7 @@
 //
 
 #include <iostream>
+#include <string>
 using namespace std;
 int main()
 {
@@ -16,16 +17,17 @@ int main()
     string direccion;
     string hobby;
     cout<<"Ingrese su Nombre: ";
-    cin>>nombre;
+    getline(cin,nombre);
     cout<<"Ingrese su Edad: ";
     cin>>edad;
     cout<<"Ingrese su Numero de Celular: ";
     cin>>celular;
     cout<<"Ingrese su Direccion: ";
-    cin>>direccion;
+    cin.ignore();
+    getline(cin,direccion);
     cout<<"Ingrese su Hobby: ";
-    cin>>hobby;
+    getline(cin,hobby);
     cout<<"Datos"<<endl;
-    cout<<nombre<<"-"<<edad<<"--"<<celular<<"--"<<direccion<<"--"<<hobby<<endl;
+    cout<<nombre<<"--"<<edad<<"--"<<celular<<"--"<<direccion<<"--"<<hobby<<endl;
     return 0;
 }
