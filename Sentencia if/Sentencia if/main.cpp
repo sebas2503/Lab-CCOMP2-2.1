@@ -13,13 +13,13 @@ int main()
 {
     int primerNumero;
     int segundoNumero;
-    int primerDigito;
-    int segundoDigito;
-    int opcion;
+    char opcion;
     cout<<"Ingrese el primer numero: ";
     cin>>primerNumero;
     cout<<"Ingrese el segundo numero: ";
     cin>>segundoNumero;
+    float primerNumeroF = primerNumero;
+    float segundoNumeroF = segundoNumero;
     //Suma
     cout<<"Suma: "<<primerNumero+segundoNumero<<endl;
     //Resta
@@ -29,14 +29,21 @@ int main()
     //Division
     if(segundoNumero!=0)
         {
-            cout<<"Division: "<<primerNumero/segundoNumero<<endl;
+            cout<<"Division: "<<primerNumeroF/segundoNumeroF<<endl;
         }
     else
         {
             cout<<"No se puede realizar la division entre 0"<<endl;
         }
     //Residuo
-    cout<<"Residuo: "<<primerNumero%segundoNumero<<endl;
+    if(segundoNumero!=0)
+        {
+            cout<<"Residuo: "<<primerNumero%segundoNumero<<endl;
+        }
+    else
+        {
+            cout<<"Imposible"<<endl;
+        }
     //Numero mayor y menor
     if(primerNumero>segundoNumero)
         {
@@ -49,60 +56,92 @@ int main()
             cout<<"Menor: "<<primerNumero<<endl;
         }
     //Saber si un numero es divisor del otro
-    if(primerNumero%segundoNumero==0)
+    if(segundoNumero !=0)
         {
-            cout<<segundoNumero<<" es divisor de "<<primerNumero<<endl;
+            if(primerNumero%segundoNumero==0)
+                {
+                    cout<<segundoNumero<<" es divisor de "<<primerNumero<<endl;
+                }
+            if(segundoNumero%primerNumero==0)
+                {
+                    cout<<primerNumero<<" es divisor de "<<segundoNumero<<endl;
+                }
         }
-    if(segundoNumero%primerNumero==0)
-        {
-            cout<<primerNumero<<" es divisor de "<<segundoNumero<<endl;
-        }
+    else
+    {
+        cout<<"Imposible saber el si es divisor si el segundo numero es 0"<<endl;
+    }
     //Ejercicio 2
-    cout<<"Primer operando: ";
-    cin>>primerDigito;
-    cout<<"Segundo operando: ";
-    cin>>segundoDigito;
-    cout<<"1. Esta opcion da la suma"<<endl;
-    cout<<"2. Esta opcion da la resta"<<endl;
-    cout<<"3. Esta opcion da la multiplicacion"<<endl;
-    cout<<"4. Esta opcion da la division"<<endl;
-    cout<<"5. Esta opcion da el residuo"<<endl;
-    cout<<"6. Esta opcion da la raiz cuadrada"<<endl;
+    cout<<"a. Esta opcion da la suma"<<endl;
+    cout<<"b. Esta opcion da la resta"<<endl;
+    cout<<"c. Esta opcion da la multiplicacion"<<endl;
+    cout<<"d. Esta opcion da la division"<<endl;
+    cout<<"e. Esta opcion da el residuo"<<endl;
+    cout<<"f. Esta opcion da la raiz cuadrada"<<endl;
     cout<<"Eliga opcion: ";
     cin>>opcion;
-    if(opcion == 1)
+    int Digito;
+    int Digito2;
+    if(opcion == 'a')
         {
-            cout<<"Suma: "<<primerDigito+segundoDigito<<endl;
+            cout<<"Primer operando: ";
+            cin>>Digito;
+            cout<<"Segundo operando: ";
+            cin>>Digito2;
+            cout<<"Suma: "<<Digito+Digito2<<endl;
         }
-    if(opcion == 2)
+    if(opcion == 'b')
         {
-            cout<<"Resta: "<<primerDigito-segundoDigito<<endl;
+            cout<<"Primer operando: ";
+            cin>>Digito;
+            cout<<"Segundo operando: ";
+            cin>>Digito2;
+            cout<<"Resta: "<<Digito-Digito2<<endl;
         }
-    if(opcion == 3)
+    if(opcion == 'c')
         {
-            cout<<"Multiplicacion: "<<primerDigito*segundoDigito<<endl;
+            cout<<"Primer operando: ";
+            cin>>Digito;
+            cout<<"Segundo operando: ";
+            cin>>Digito2;
+            cout<<"Multiplicacion: "<<Digito*Digito2<<endl;
         }
-    if(opcion == 4)
+    if(opcion == 'd')
         {
-            if(segundoDigito !=0)
+            cout<<"Primer operando: ";
+            cin>>Digito;;
+            cout<<"Segundo operando: ";
+            cin>>Digito2;
+            if(Digito2 !=0)
                 {
                     cout<<"No se puede dividir entre 0"<<endl;
                 }
             else
                 {
-                    cout<<"Division: "<<primerDigito/segundoDigito<<endl;
+                    cout<<"Division: "<<Digito/Digito2<<endl;
                 }
         }
-    if(opcion == 5)
+    if(opcion == 'e')
         {
-            cout<<"Residuo: "<<primerDigito%segundoDigito<<endl;
+            cout<<"Primer operando: ";
+            cin>>Digito;
+            cout<<"Segundo operando: ";
+            cin>>Digito2;
+            if(Digito2 !=0)
+                {
+                    cout<<"Residuo: "<<Digito%Digito2<<endl;
+                }
+            else
+                {
+                    cout<<"Imposible saber el residuo si el segundo numero es 0"<<endl;
+                }
         }
-    if(opcion == 6)
+    if(opcion == 'f')
         {
-            cout<<"Raiz cuadrada del primer numero: ";
-            cout<<sqrt(primerDigito)<<endl;
-            cout<<"Raiz cuadrada del segundo numero: ";
-            cout<<sqrt(segundoDigito)<<endl;
+            int Digito3;
+            cout<<"Numero: ";
+            cin>>Digito3;
+            cout<<"Raiz cuadrada: "<<sqrt(Digito3)<<endl;
         }
     return 0;
 }
